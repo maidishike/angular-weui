@@ -2,5 +2,5 @@
   'use strict';
 
   angular
-    .module('app', ['ui.router', 'focus-if',"ngProgress"]);
+    .module('app', ['ui.router','oc.lazyLoad']);
 })();

@@ -7,49 +7,16 @@
     "jquery": "~2.1.4",
     "angular-ui-router": "~0.2.15",
     "angular": "~1.4.2",
-    "weui": "0.4.0"
+    "weui": "0.4.0",
+    "oclazyload" : "1.0.9"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.2"
   },
   "overrides": {
-    "bootstrap": {
-      "main": [
-        "dist/css/bootstrap.css",
-        "dist/js/bootstrap.js",
-        "fonts/glyphicons-halflings-regular.eot",
-        "fonts/glyphicons-halflings-regular.svg",
-        "fonts/glyphicons-halflings-regular.ttf",
-        "fonts/glyphicons-halflings-regular.woff",
-        "fonts/glyphicons-halflings-regular.woff2"
-      ]
-    },
-    "fontawesome":{
-      "main": [
-        "css/font-awesome.css",
-        "fonts/FontAwesome.otf",
-        "fonts/fontawesome-webfont.eot",
-        "fonts/fontawesome-webfont.svg",
-        "fonts/fontawesome-webfont.ttf",
-        "fonts/fontawesome-webfont.woff",
-        "fonts/fontawesome-webfont.woff2"
-      ]
-    },
-    "highcharts": {
-      "main": [
-        "highcharts.js",
-        "highcharts-more.js"
-      ]
-    },
-    "moment": {
-      "main": [
-        "moment.js",
-        "locale/zh-cn.js"
-      ]
-    }
   },
   "resolutions": {
     "jquery": "~2.1.4",
-    "angular": "~1.4.8"
+    "angular": "~1.4.2"
   }
 }

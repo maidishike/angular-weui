@@ -6,15 +6,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="../bower_components/weui/dist/style/weui.min.css">
+    <link rel="stylesheet" href="./app/common/style.css">
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script src="../bower_components/angular/angular.min.js"></script>
     <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="../bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
 
 
-    <!-- 项目文件js-->
-    <script src="./app/index.route.js"></script>
-    <script src="./app/index.module.js"></script>
-    <script src="./app/index.run.js"></script>
+
   </head>
   <body>
     <!--[if lt IE 10]>
@@ -22,7 +21,15 @@
     <![endif]-->
 
     <div ui-view></div>
+    <!-- 项目文件js-->
+    <script src="./app/index.module.js"></script>
+    <script src="./app/index.route.js"></script>
+    <script src="./app/index.run.js"></script>
+    <script src="./app/common/service.js"></script>
+    <script src="./app/components/user/user-login.controller.js"></script>
 
-
+    <script>
+      var requestUrl = "./app/data"
+    </script>
   </body>
 </html>

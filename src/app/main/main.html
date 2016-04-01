@@ -1,163 +1,27 @@
-<!--
-<header id="header" class="navbar  " role="navigation" ng-controller="HeadController">
-  <div class="container-fluid  navbar-fixed-top ">
-    <div class="mainHeader">
-      <div class="navbar-brand" style="margin-left: 10px;">
-        &lt;!&ndash;height: 40px;&ndash;&gt;
-        <img src="images/logo2.png" style=" width: 100px;margin:10px 0;" />
-        &lt;!&ndash;<p style="color: #fff;font-size: 25px;margin-top: 8px;text-shadow: -1px -1px 5px #ccc;">BeaconYun</p>&ndash;&gt;
-      </div>
-      <div class="collapse navbar-collapse  " id="bs-example-navbar-collapse-1">
-        &lt;!&ndash;<ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-                <a class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="peopleOperation">个人操作<span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">修改密码</a></li>
-                    <li><a href="#">个人信息</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">退出登录</a></li>
-                </ul>
-            </li>
-        </ul>&ndash;&gt;
-        <ul class=" nav navbar-nav navbar-right">
-          <li class="dropdown" >
-            <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="dropdownMenu1" ><span ng-bind="loginEmail" style="cursor: pointer;"></span><span class="caret"></span></a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a href="#/user/change/password">修改密码</a></li>
-              &lt;!&ndash;<li><a href="#/user/info">个人信息</a></li>&ndash;&gt;
-              <li class="divider"></li>
-              <li><a style="cursor: pointer;" ng-click="userLogOut()">退出登录</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</header>
-<section id="top"></section>
-<div class="mainViewTpl">
-  <nav id="nav" class="nav-primary nav-vertical "   ng-controller="NavController">
-    &lt;!&ndash;<angular-accordion>
-        <pane ng-repeat="navlist in navList">
-            <pane-header>
-                <i class="{{navlist.icon}}"></i> {{navlist.label}}
-            </pane-header>
-            <pane-content>
-                <ul class="nav nav-stacked">
-                    <li ng-repeat="item in navlist.items"><a ui-sref="{{item.url}}"><i class="{{item.icon}}"></i> <span>{{item.label}}</span></a></li>
-                </ul>
-            </pane-content>
-        </pane>
-    </angular-accordion>&ndash;&gt;
-    <ul id="menuUl" class="nav navBg">
-      &lt;!&ndash; end ngRepeat: navlist in navList &ndash;&gt;
-      <li ui-sref-active="active" class="dropdown-submenu menuLi " style="border-bottom: none;">
-        <a onclick="toTop()" ui-sref="dashboardDataList" style="font-size: 15px;"  >&nbsp;&nbsp;<i class="fa fa-desktop"></i>&nbsp;总览</a>
-        <ul class="nav submenu" id="itemMenu">
-          &lt;!&ndash; ngRepeat: item in navlist.items &ndash;&gt;
-        </ul>
-      </li>
-      <li ui-sref-active="active" class="dropdown-submenu menuLi ">
-        <li onclick="toTop()" class="nav-bar-parent"  style="font-size: 15px;" >&nbsp;&nbsp;<i class="fa fa-windows"></i>&nbsp;互动应用</li>
-        <ul class="nav submenu" id="itemMenu">
-          <li onclick="toTop()" ui-sref-active="active"><a ui-sref="pageList">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;应用管理</a></li>
-          &lt;!&ndash;<li onclick="toTop()" ui-sref-active="active"><a ui-sref="applicationsquare">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;应用广场</a></li>&ndash;&gt;
-          <li onclick="toTop()" ui-sref-active="active"><a ui-sref="cardList({page:1})">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;卡券管理</a></li>
-          <li onclick="toTop()" class="nav-bar-child-last" ui-sref-active="active"><a ui-sref="lotteryList({page:1})">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;红包管理</a></li>
-        </ul>
-      </li>
-      <li ui-sref-active="active" class="dropdown-submenu menuLi">
-        <li onclick="toTop()" class="nav-bar-parent"  style="font-size: 15px;" >&nbsp;&nbsp;<i class="fa fa-globe"></i>&nbsp;LBS</li>
-        <ul class="nav submenu" id="itemMenu">
-          <li onclick="toTop()" ui-sref-active="active"><a ui-sref="branchList({page:1})">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;门店管理</a></li>
-          <li onclick="toTop()" ui-sref-active="active"><a ui-sref="deviceBindedList({page:1})">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;设备管理</a></li>
-          &lt;!&ndash;<li onclick="toTop()" class="nav-bar-child-last"  ui-sref-active="active"><a ui-sref="beaconList({page:1})">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;部署管理</a></li>&ndash;&gt;
-        </ul>
-      </li>
-      <li ui-sref-active="active" class="dropdown-submenu menuLi ">
-        <li onclick="toTop()" class="nav-bar-parent"  style="font-size: 15px;" >&nbsp;&nbsp;<i class="fa fa-caret-square-o-right"></i>&nbsp;管理</li>
-        <ul class="nav submenu" id="itemMenu" style="border-bottom: 1px solid #dee5e7;" >
-          <li onclick="toTop()" ng-if="business_privilege == 1" ui-sref-active="active"><a ui-sref="merchantList({page:1})" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;商家管理</a></li>
-          <li onclick="toTop()"  ui-sref-active="active"><a ui-sref="staffList({page:1})" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;账号管理</a></li>
-          &lt;!&ndash;<li onclick="toTop()" ui-sref-active="active"><a ui-sref="deviceBindedList({page:1})">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;渠道管理</a></li>&ndash;&gt;
-          <li onclick="toTop()" ng-if="role != 3 && is_root == '1'" class="nav-bar-child-last"  ui-sref-active="active"><a ui-sref="wechatpublic">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;公众号设置</a></li>
-        </ul>
-      </li>
-
-      &lt;!&ndash;<li ui-sref-active="active" class="dropdown-submenu menuLi ">
-        <a onclick="toTop()" ui-sref="selectCardTpl" style="font-size: 15px;" >&nbsp;&nbsp;<i class="fa fa-th-large"></i>应用广场</a>
-
-      </li>
-      <li ui-sref-active="active" class="dropdown-submenu menuLi ">
-        <a onclick="toTop()" ui-sref="viewCardList" style="font-size: 15px;" >&nbsp;&nbsp;<i class="fa fa-ticket"></i>卡券管理</a>
-        <ul class="nav submenu" id="itemMenu">
-        </ul>
-      </li>
-      <li ui-sref-active="active" class="dropdown-submenu menuLi ">
-        <a onclick="toTop()" ui-sref="redMoneyHuo({page:1})" style="font-size: 15px;" >&nbsp;&nbsp;<i class="fa fa-gift"></i>红包管理</a>
-        <ul class="nav submenu" id="itemMenu">
-        </ul>
-      </li>&ndash;&gt;
-      &lt;!&ndash; ngRepeat: navlist in navList &ndash;&gt;
-
-      &lt;!&ndash; end ngRepeat: navlist in navList &ndash;&gt;
-      &lt;!&ndash; <li ui-sref-active="active" class="dropdown-submenu menuLi ">
-         <a onclick="toTop()" ui-sref="compaignList({page:1})" style="font-size: 15px;" >&nbsp;&nbsp;<i class="fa fa-caret-square-o-right"></i>广告管理</a>
-         <ul class="nav submenu" id="itemMenu">
-         </ul>
-       </li>&ndash;&gt;
-      &lt;!&ndash; end ngRepeat: navlist in navList &ndash;&gt;
-      &lt;!&ndash; end ngRepeat: navlist in navList &ndash;&gt;
-      <li ui-sref-active="active" class="dropdown-submenu menuLi ">
-        <a onclick="toTop()" ui-sref="statsBase" style="font-size: 15px;"  >&nbsp;&nbsp;<i class="fa fa-bar-chart"></i>&nbsp;数据统计</a>
-        <ul class="nav submenu" id="itemMenu">
-          &lt;!&ndash; ngRepeat: item in navlist.items &ndash;&gt;
-        </ul>
-      </li>
-      <li ui-sref-active="active" class="dropdown-submenu menuLi ">
-        <a onclick="toTop()" ui-sref="applicationDataList" style="font-size: 15px;">&nbsp;&nbsp;<i class="fa fa-windows"></i>&nbsp;应用管理</a>
-        <ul class="nav nav-list" id="itemMenu" ng-repeat="class_name in applicationClassesPagingData" >
-          &lt;!&ndash; ngRepeat: item in navlist.items &ndash;&gt;
-          &lt;!&ndash;<li onclick="toTop()"  ui-sref-active="active"><a ui-sref="applicationDataList({class:class_name.name,object_id:class_name.object_id,page:1})" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{class_name.name}}</a></li>&ndash;&gt;
-
-        </ul>
-      </li>
-    </ul>
-  </nav>
-  <section id="content" ui-view="maingrid"></section>
-</div>
-<footer id="footer" ui-view="mainFooter">
-</footer>
-<script>
-  function toTop(){
-    window.scroll(0,0);
-  }
-</script>
--->
 <!-- Wrapper-->
 <div id="wrapper">
 
     <!-- Navigation -->
-    <div ng-include="'app/components/common/navigation.html'"></div>
+    <!--<div ng-include="'app/components/common/navigation.html'"></div>-->
 
     <!-- Page wraper -->
     <!-- ng-class with current state name give you the ability to extended customization your view -->
-    <div id="page-wrapper" class="gray-bg {{$state.current.name}}">
+    <!--<div id="page-wrapper" class="gray-bg {{$state.current.name}}">-->
 
         <!-- Page wrapper -->
-        <div ng-include="'app/components/common/topnavbar.html'"></div>
+        <!--<div ng-include="'app/components/common/topnavbar.html'"></div>-->
 
         <!-- Main view  -->
         <div ui-view></div>
 
         <!-- Footer -->
-        <div ng-include="'app/components/common/footer.html'"></div>
+        <!--<div ng-include="'app/components/common/footer.html'"></div>-->
 
-    </div>
+    <!--</div>-->
     <!-- End page wrapper-->
 
     <!-- Right Sidebar -->
-    <div ng-include="'app/components/common/right_sidebar.html'"></div>
+    <!--<div ng-include="'app/components/common/right_sidebar.html'"></div>-->
 
 </div>
 <!-- End wrapper-->

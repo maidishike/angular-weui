@@ -1,0 +1,23 @@
+html,body{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #fbf9fe;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.bd.spacing {
+    padding: 0 15px;
+}
+
+.page.button .page_title {
+    color: #225fba;
+}
+.page_title {
+    text-align: center;
+    font-size: 34px;
+    color: #3cc51f;
+    font-weight: 400;
+    margin: 0 15%;
+}
