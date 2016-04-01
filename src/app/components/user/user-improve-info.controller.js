@@ -2,9 +2,9 @@
 (function () {
     'use strict';
     angular.module('app')
-        .controller('UserLoginController', UserLoginController);
+        .controller('UserImproveInfoController', UserImproveInfoController);
 
-    function UserLoginController($scope,$location,weChatService){
+    function UserImproveInfoController($scope,$location,weChatService){
         $scope.userLoginFormData = {};
         $scope.userLogin = function(){
             weChatService.login($scope.userLoginFormData)
@@ -13,9 +13,7 @@
                     for(var i in data){
                         if(data[i].email == $scope.userLoginFormData.email && data[i].password == $scope.userLoginFormData.password)
                         {
-                            console.log(data[i].email == $scope.userLoginFormData.email);
-                            console.log(data[i].password == $scope.userLoginFormData.password);
-                            $location.path('user/improve/info');
+                            $location.path('#/user/improve/info')
                         }else{
                             $('.js_tooltips').show();
                             setTimeout(function (){

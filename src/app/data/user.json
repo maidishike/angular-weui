@@ -1,7 +1,8 @@
 [{
-  "email" : "123@qq.com",
-  "password" : "123"
+  "email" : "admin",
+  "password" : "123456",
+  "active"
 },{
-  "email" : "456@qq.com",
-  "password" : "456"
+  "email" : "test",
+  "password" : "123456"
 }]

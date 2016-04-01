@@ -28,6 +28,12 @@
           templateUrl: "app/components/user/user-login.html",
           controller: 'UserLoginController'
         })
+
+        .state('improveInfo', {
+            url: "/user/improve/info",
+            templateUrl: "app/components/user/user-improve-info.html",
+            controller: 'UserImproveInfoController'
+        })
         .state('forgetPwd', {
 
           url: '/user/forget/password',

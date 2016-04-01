@@ -1,12 +1,12 @@
 <div class="weui_toptips weui_warn js_tooltips">邮箱或密码错误</div>
 <div class="page button hd">
-    <h1 class="page_title">Login</h1>
+    <div ng-include="'app/components/common/top-bar.html'"></div>
 </div>
 <form name = "userLoginForm" role="form">
     <div class="weui_cells weui_cells_form" >
         <div class="weui_cell">
             <div class="weui_cell_bd weui_cell_primary">
-                <input name="email" ng-model="userLoginFormData.email" class="weui_input" type="email" placeholder="请输入邮箱">
+                <input name="email" ng-model="userLoginFormData.email" class="weui_input" type="text" placeholder="请输入账号">
             </div>
         </div>
         <div class="weui_cell">
@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="bd spacing" style="margin-top: 20px;">
-        <a href="javascript:;" ng-click="userLogin(userLoginFormData)" class="weui_btn weui_btn_primary">按钮</a>
+        <a href="javascript:;" ng-disabled = "userLoginForm.$invalid" ng-click="userLogin(userLoginFormData)" class="weui_btn weui_btn_primary">登录</a>
     </div>
 </form>
 
