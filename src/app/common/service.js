@@ -9,7 +9,7 @@
     function weChatService($http) {
 
         /*
-         * �û���¼
+         * 用户登录
          *
          * */
 
@@ -35,13 +35,28 @@
 
         };
 
-
+        //登录
         this.login = function (formData) {
             return (
                 $http({
                     method: 'POST',
 
                     url: requestUrl + '/user.json',
+
+                    headers: {'Content-Type': 'application/json'},
+
+                    data: formData
+                })
+            )
+        };
+
+        //完善信息
+        this.improveInfo = function (formData) {
+            return (
+                $http({
+                    method: 'POST',
+
+                    url: requestUrl + '/user-info.json',
 
                     headers: {'Content-Type': 'application/json'},
 

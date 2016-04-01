@@ -3,7 +3,7 @@
 <div class="page button hd">
     <h1 class="page_title">完善资料</h1>
 </div>
-<form name = "" role="form">
+<form name = "userImproveInfoForm" role="form">
     <div class="weui_cells_title">填写您的信息</div>
     <div class="weui_cells weui_cells_form">
         <div class="weui_cell">
@@ -11,7 +11,7 @@
                 <label class="weui_label">姓名</label>
             </div>
             <div class="weui_cell_bd weui_cell_primary">
-                <input class="weui_input" type="tel" placeholder="请输入姓名">
+                <input class="weui_input" type="text" ng-model="userImproveInfoFormData.name" placeholder="请输入姓名">
             </div>
         </div>
         <div class="weui_cell">
@@ -19,7 +19,7 @@
                 <label class="weui_label">手机</label>
             </div>
             <div class="weui_cell_bd weui_cell_primary">
-                <input class="weui_input" type="tel" placeholder="请输入手机号">
+                <input class="weui_input" ng-model="userImproveInfoFormData.phone_number" type="tel" placeholder="请输入手机号">
             </div>
         </div>
         <div class="weui_cell">
@@ -27,7 +27,7 @@
                 <label class="weui_label">微信</label>
             </div>
             <div class="weui_cell_bd weui_cell_primary">
-                <input class="weui_input" type="tel" placeholder="请输入微信号">
+                <input class="weui_input" ng-model="userImproveInfoFormData.wx" type="tel" placeholder="请输入微信号">
             </div>
         </div>
         <div class="weui_cell">
@@ -35,11 +35,33 @@
                 <label class="weui_label">邮箱</label>
             </div>
             <div class="weui_cell_bd weui_cell_primary">
-                <input class="weui_input" type="tel" placeholder="请输入邮箱">
+                <input class="weui_input" ng-model="userImproveInfoFormData.email" type="email" placeholder="请输入邮箱">
+            </div>
+        </div>
+        <div class="weui_cell weui_cell_select weui_select_after">
+            <div class="weui_cell_hd">
+                深圳地区
+            </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <select class="weui_select" name="select2">
+                    <option value="1">南山区</option>
+                    <option value="2">宝安区</option>
+                    <option value="3">龙华区</option>
+                    <option value="3">龙岗区</option>
+                    <option value="3">罗湖区</option>
+                </select>
             </div>
         </div>
     </div>
     <div class="bd spacing" style="margin-top: 20px;">
-        <a href="javascript:;" ng-disabled = "userLoginForm.$invalid" ng-click="userLogin(userLoginFormData)" class="weui_btn weui_btn_primary">确定</a>
+        <a href="javascript:;" ng-disabled = "userImproveInfoForm.$invalid" ng-click="userImproveInfo(userImproveInfoFormData)" class="weui_btn weui_btn_primary">确定</a>
     </div>
 </form>
+
+<div id="toast" style="display: none;">
+    <div class="weui_mask_transparent"></div>
+    <div class="weui_toast">
+        <i class="weui_icon_toast"></i>
+        <p class="weui_toast_content">更新成功</p>
+    </div>
+</div>
