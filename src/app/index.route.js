@@ -55,10 +55,26 @@
           templateUrl: "app/main/main.html"
         })
 
-        .state('app.pageList', {
-          url: "/page/list/:page",
-          templateUrl: "app/components/page/page-binded-list.html",
-          controller: 'PageListController as vm'
+        .state('app.home', {
+          url: "/home",
+          templateUrl: "app/components/home/home.html",
+          controller: 'HomeController'
+        })
+
+        .state('app.address', {
+            url: "/address",
+            templateUrl: "app/components/address/address.html",
+            controller: 'AddressController'
+        })
+        .state('app.find', {
+            url: "/find",
+            templateUrl: "app/components/find/find.html",
+            controller: 'FindController'
+        })
+        .state('app.me', {
+            url: "/me",
+            templateUrl: "app/components/me/me.html",
+            controller: 'MeController'
         })
 
 

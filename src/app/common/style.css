@@ -31,3 +31,11 @@ html,body{
     max-height: 100%;
     border-radius: 36px;
 }
+
+.fa{
+    color: #888;
+}
+
+.weui_tabbar_item.active .weui_tabbar_label,.weui_tabbar_item.active .fa{
+    color: #09BB07;
+}

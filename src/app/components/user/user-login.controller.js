@@ -17,7 +17,7 @@
                                 $location.path('user/improve/info');
 
                             }else{
-                                alert('已激活!')
+                                $location.path('app/home');
                             }
                         }else{
                             showAndHide('.js_tooltips',3000);

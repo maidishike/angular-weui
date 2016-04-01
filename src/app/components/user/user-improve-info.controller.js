@@ -11,6 +11,7 @@
                 .success(function(data){
                     if(data.update == 1){
                         showAndHide('#toast',1000);
+                        $location.path('app/home');
                     }
                 })
         }
