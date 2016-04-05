@@ -1,2 +1,2 @@
-# h5
-weui web project
+# angular-weui
+angular weui web project

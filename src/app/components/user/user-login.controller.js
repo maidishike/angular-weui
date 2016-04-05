@@ -12,6 +12,8 @@
                     for(var i in data){
                         if(data[i].email == $scope.userLoginFormData.email && data[i].password == $scope.userLoginFormData.password)
                         {
+                            $scope.userid = data[i].userId;
+                            window.sessionStorage.setItem("userId",$scope.userid);
                             if(data[i].active == 0){
                                 showAndHide('#loadingToast',1000);
                                 $location.path('user/improve/info');

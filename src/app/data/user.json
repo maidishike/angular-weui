@@ -1,9 +1,11 @@
 [{
   "email" : "admin",
   "password" : "123456",
-  "active" : 1
+  "active" : 1,
+  "userId": "admin2016"
 },{
   "email" : "test",
   "password" : "123456",
-  "active": 1
+  "active": 0,
+  "userId": "test2016"
 }]

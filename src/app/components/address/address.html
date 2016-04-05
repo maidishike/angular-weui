@@ -1,1 +1,10 @@
-address
+<div class="weui_cells_title">通讯录</div>
+<div class="weui_cells">
+    <div class="weui_cell" ng-repeat="address in addressDataList">
+        <div class="weui_cell_hd"><img style="width:35px;margin-right: 5px;display: block;" ng-src="{{address.logo}}"> </div>
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>{{address.name}}</p>
+        </div>
+        <div class="weui_cell_ft"></div>
+    </div>
+</div>

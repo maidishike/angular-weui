@@ -1,12 +1,46 @@
 <!-- Wrapper-->
 <div id="wrapper" style="height: 100%;">
+    <div class="page button hd">
+        <div ng-include="'app/components/common/top-bar.html'"></div>
+    </div>
+    <div class="weui_cells weui_cells_access">
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>姓名</p>
+            </div>
+            <div class="weui_cell_ft" ng-bind="name"></div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>微信号</p>
+            </div>
+            <div class="weui_cell_ft" ng-bind="wx"></div>
+        </div>
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>手机号</p>
+            </div>
+            <div class="weui_cell_ft" ng-bind="phone"></div>
+        </div>
 
+            <a class="weui_cell" href="javascript:;">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>邮箱</p>
+                </div>
+                <div class="weui_cell_ft"></div>
+            </a>
+            <a class="weui_cell" href="javascript:;">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>地区</p>
+                </div>
+                <div class="weui_cell_ft"></div>
+            </a>
 
-
-
-    me
+    </div>
     <!--Footer-->
-    <div ng-include="'app/components/common/footer.html'"></div>
-
+    <!--<div ng-include="'app/components/common/footer.html'"></div>-->
+    <div class="bd spacing" style="margin-top: 20px;">
+        <a href="javascript:;" ng-click="userLogin(userLoginFormData)" class="weui_btn weui_btn_primary">退出登录</a>
+    </div>
 </div>
 <!-- End wrapper-->

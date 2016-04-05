@@ -1,0 +1,17 @@
+[{
+  "email" : "admin",
+  "password" : "123456",
+  "active" : 1,
+  "userId": "admin2016",
+  "phone": "13728878732",
+  "wx": "zhuodalian",
+  "name": "zsf"
+},{
+  "email" : "test",
+  "password" : "123456",
+  "active": 0,
+  "userId": "test2016",
+  "phone": "15626508920",
+  "wx": "wanshenggguang",
+  "name": "wsg"
+}]

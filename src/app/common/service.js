@@ -65,5 +65,33 @@
             )
         };
 
+        //查看本人信息
+        this.detailSelf = function (userId) {
+            return (
+                $http({
+                    method: 'GET',
+
+                    url: requestUrl + '/me.json?userId='+userId,
+
+                    headers: {'Content-Type': 'text/plain'}
+
+                })
+            )
+        };
+
+        //查看通讯录
+        this.queryAddress = function () {
+            return (
+                $http({
+                    method: 'GET',
+
+                    url: requestUrl + '/address.json',
+
+                    headers: {'Content-Type': 'text/plain'}
+
+                })
+            )
+        };
+
     }
 })();
