@@ -17,7 +17,13 @@
                         $scope.name = data[i].name;
                     }
                 }
-            })
+            });
+
+        //退出登录
+
+        $scope.userLogout = function(){
+
+        }
     }
 
 })();

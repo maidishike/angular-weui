@@ -1,5 +1,5 @@
 
-//ÏÔÊ¾»òÒş²Ø¶¯»­
+//æ˜¾ç¤ºæˆ–éšè—åŠ¨ç”»
 function showAndHide(attr,time){
     $(attr).show();
     setTimeout(function () {
@@ -7,7 +7,7 @@ function showAndHide(attr,time){
     }, time);
 }
 
-//ÒÆ³ısession
+//ç§»é™¤session
 function removeSession(name){
     window.sessionStorage.removeItem(name);
 }

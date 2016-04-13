@@ -8,33 +8,6 @@
     /** @ngInject */
     function weChatService($http) {
 
-        /*
-         * 用户登录
-         *
-         * */
-
-        this.getBeaconList = function (searchMsg, pageId, access_token) {
-            if (typeof (searchMsg) == 'undefined') {
-                return ($http({
-
-                    method: 'GET',
-
-                    url: requestUrl + '/beacons?page=' + pageId,
-
-                    headers: {'Content-Type': 'text/plain', 'X-Access-Token': access_token}
-
-                }))
-            } else {
-                return ($http({
-                    method: 'GET',
-                    url: requestUrl + '/beacons?q=' + searchMsg + '&page=' + pageId,
-                    headers: {'Content-Type': 'text/plain', 'X-Access-Token': access_token}
-                }))
-
-            }
-
-        };
-
         //登录
         this.login = function (formData) {
             return (
@@ -48,6 +21,18 @@
                     data: formData
                 })
             )
+        };
+
+        //退出
+
+        this.logout = function(userId){
+          return(
+              $http({
+                  method: 'POST',
+                  url: requestUrl + '/logout.json?userId='+userId,
+                  headers: {'Content-Type': 'application/json'}
+              })
+          )
         };
 
         //完善信息
